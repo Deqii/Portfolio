@@ -6,8 +6,16 @@
     <title>Portfolio - Deqii</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="./tailwind.config.js"></script>
+
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Ovo&display=swap"
+      rel="stylesheet"
+    />
   </head>
-  <body class="overflow-x-hidden">
+  <body class="overflow-x-hidden font-Outfit leading-8">
     <div class="fixed top-0 right-0 w-11/12 -z-10 translate-y-[-80%]">
       <img src="./images/header-bg-color.png" alt="" class="w-full" />
     </div>
@@ -20,7 +28,7 @@
         Deqii <span class="text-yellow-300">.</span>
       </h1>
       <ul
-        class="hidden md:flex items-center gap-6 lg:gap-8 rounded-full px-12 py-3 bg-white shadow-sm bg-opacity-50"
+        class="hidden md:flex items-center gap-6 lg:gap-8 rounded-full px-12 py-3 bg-white shadow-sm bg-opacity-50 font-Ovo"
       >
         <li><a href="#top">Home</a></li>
         <li><a href="#about">About me</a></li>
@@ -37,7 +45,7 @@
 
         <a
           href="#contact"
-          class="hidden lg:flex items-center gap-3 px-10 py-2.5 border border-gray-500 rounded-full ml-4"
+          class="hidden lg:flex items-center gap-3 px-10 py-2.5 border border-gray-500 rounded-full ml-4 font-Ovo"
           >Contact
           <img src="./images/right-arrow-bold.png" alt="arrow" class="w-3"
         /></a>
@@ -51,7 +59,7 @@
       <!-- mobile menu -->
       <ul
         id="sideMenu"
-        class="flex md:hidden flex-col gap-4 py-20 px-10 fixed -right-64 top-0 bottom-0 w-64 z-50 h-screen bg-amber-100 transition duration-500"
+        class="flex md:hidden flex-col gap-4 py-20 px-10 fixed -right-64 top-0 bottom-0 w-64 z-50 h-screen bg-amber-100 transition duration-500 font-Ovo"
       >
         <div class="absolute right-6 top-6" onclick="closeMenu()">
           <img
@@ -78,14 +86,14 @@
         alt="profile"
         class="rounded-full w-32 h-32"
       />
-      <h3 class="flex items-end gap-2 text-xl md:text-2xl mb-3">
+      <h3 class="flex items-end gap-2 text-xl md:text-2xl mb-3 font-Ovo">
         Hi! I'm Tio Prayudha
         <img src="./images//hand-icon.png" alt="hand icon" class="w-6" />
       </h3>
-      <h1 class="text-3xl sm:text-6xl lg:text-[66px]">
+      <h1 class="text-3xl sm:text-6xl lg:text-[66px] font-Ovo">
         Fullstack web developer based in Indonesia.
       </h1>
-      <p class="max-w-2xl mx-auto">
+      <p class="max-w-2xl mx-auto font-Ovo">
         I'm a passionate Full-Stack Developer with a knack for building dynamic
         and scalable web applications. My tech stack includes React.js, Next.js,
         and Express for seamless front-end and back-end development, coupled
@@ -117,8 +125,8 @@
 
     <!-- about me -->
     <div id="about" class="w-full px-[12%] py-10 scroll-mt-20">
-      <h4 class="text-center mb-2 text-lg">Introduction</h4>
-      <h2 class="text-center text-5xl">About me</h2>
+      <h4 class="text-center mb-2 text-lg font-Ovo">Introduction</h4>
+      <h2 class="text-center text-5xl font-Ovo">About me</h2>
 
       <div class="flex w-full flex-col lg:flex-row items-center gap-20 my-20">
         <div class="max-w-max mx-auto relative">
@@ -134,7 +142,7 @@
             <img
               src="./images/circular-text.avif"
               alt="circular text"
-              class="w-full rounded-full"
+              class="w-full rounded-full animate-spin_slow"
             />
             <img
               src="./images/dev-icon.png"
@@ -144,7 +152,7 @@
           </div>
         </div>
         <div class="flex-1">
-          <p class="mb-10 max-w-2xl">
+          <p class="mb-10 max-w-2xl font-Ovo">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
             harum eos eveniet vitae autem doloribus, labore aliquam deleniti,
             voluptatum cum hic ducimus quasi nihil perferendis facere vel quod
@@ -188,7 +196,7 @@
               <p class="text-gray-600 text-sm">Built more than 3 projects</p>
             </li>
           </ul>
-          <h4 class="my-6 text-gray-700">Tools i use</h4>
+          <h4 class="my-6 text-gray-700 font-Ovo">Tools i use</h4>
 
           <ul class="flex items-center gap-3 sm:gap-5">
             <li
@@ -227,14 +235,14 @@
 
     <!-- services -->
     <div id="services" class="w-full px-[12%] py-10 scroll-mt-20">
-      <h4 class="text-center mb-2 text-lg">What i offer</h4>
-      <h2 class="text-center text-5xl">My services</h2>
-      <p class="text-center max-w-2xl mx-auto mt-5 mb-12">
+      <h4 class="text-center mb-2 text-lg font-Ovo">What i offer</h4>
+      <h2 class="text-center text-5xl font-Ovo">My services</h2>
+      <p class="text-center max-w-2xl mx-auto mt-5 mb-12 font-Ovo">
         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam quod
         ipsam placeat. Consequatur, iure iste.
       </p>
 
-      <div class="grid grid-cols-4 gap-6 my-10">
+      <div class="grid grid-cols-auto gap-6 my-10">
         <div
           class="border border-gray-400 rounded-lg px-8 py-12 hover:shadow-[4px_4px_0_#000] cursor-pointer hover:bg-amber-100 hover:-translate-y-1 duration-500"
         >
@@ -292,14 +300,14 @@
 
     <!-- my work -->
     <div id="work" class="w-full px-[12%] py-10 scroll-mt-20">
-      <h4 class="text-center mb-2 text-lg">My Portfolio</h4>
-      <h2 class="text-center text-5xl">My Latest Work</h2>
-      <p class="text-center max-w-2xl mx-auto mt-5 mb-12">
+      <h4 class="text-center mb-2 text-lg font-Ovo">My Portfolio</h4>
+      <h2 class="text-center text-5xl font-Ovo">My Latest Work</h2>
+      <p class="text-center max-w-2xl mx-auto mt-5 mb-12 font-Ovo">
         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam quod
         ipsam placeat. Consequatur, iure iste.
       </p>
 
-      <div class="grid grid-cols-4 my-10 gap-5">
+      <div class="grid grid-cols-auto my-10 gap-5">
         <div
           class="aspect-square bg-[url('./images/work-1.png')] bg-no-repeat bg-cover bg-center rounded-lg relative cursor-pointer group"
         >
@@ -382,15 +390,15 @@
       id="contact"
       class="w-full px-[12%] py-10 scroll-mt-20 bg-[url('./images/footer-bg-color.png')] bg-no-repeat bg-[length:90%_auto] bg-center"
     >
-      <h4 class="text-center mb-2 text-lg">Connect with me</h4>
-      <h2 class="text-center text-5xl">Get in touch</h2>
-      <p class="text-center max-w-2xl mx-auto mt-5 mb-12">
+      <h4 class="text-center mb-2 text-lg font-Ovo">Connect with me</h4>
+      <h2 class="text-center text-5xl font-Ovo">Get in touch</h2>
+      <p class="text-center max-w-2xl mx-auto mt-5 mb-12 font-Ovo">
         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam quod
         ipsam placeat. Consequatur, iure iste.
       </p>
 
       <form action="" class="max-w-2xl mx-auto">
-        <div class="grid grid-cols-2 gap-6 mt-10 mb-8">
+        <div class="grid grid-cols-auto gap-6 mt-10 mb-8">
           <input
             type="text"
             placeholder="Enter your name"
