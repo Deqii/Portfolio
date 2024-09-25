@@ -15,8 +15,12 @@
       rel="stylesheet"
     />
   </head>
-  <body class="overflow-x-hidden font-Outfit leading-8">
-    <div class="fixed top-0 right-0 w-11/12 -z-10 translate-y-[-80%]">
+  <body
+    class="overflow-x-hidden font-Outfit leading-8 dark:bg-[#11001F] dark:text-white"
+  >
+    <div
+      class="fixed top-0 right-0 w-11/12 -z-10 translate-y-[-80%] dark:hidden"
+    >
       <img src="./images/header-bg-color.png" alt="" class="w-full" />
     </div>
 
@@ -25,10 +29,10 @@
       class="w-full fixed px-5 lg:px-8 xl:px-[8%] py-4 flex items-center justify-between z-50"
     >
       <h1 class="text-3xl cursor-pointer mr-14 font-bold">
-        Deqii <span class="text-yellow-300">.</span>
+        Deqii<span class="text-yellow-300">.</span>
       </h1>
       <ul
-        class="hidden md:flex items-center gap-6 lg:gap-8 rounded-full px-12 py-3 bg-white shadow-sm bg-opacity-50 font-Ovo"
+        class="hidden md:flex items-center gap-6 lg:gap-8 rounded-full px-12 py-3 bg-white shadow-sm bg-opacity-50 font-Ovo dark:border dark:border-white/50 dark:bg-transparent"
       >
         <li><a href="#top">Home</a></li>
         <li><a href="#about">About me</a></li>
@@ -39,33 +43,66 @@
 
       <div class="flex items-center gap-4">
         <!-- icon -->
-        <button>
-          <img src="./images/moon_icon.png" alt="moon icon" class="w-6" />
+        <button onclick="toggleTheme()">
+          <img
+            src="./images/moon_icon.png"
+            alt="moon icon"
+            class="w-6 dark:hidden"
+          />
+          <img
+            src="./images/sun_icon.png"
+            alt="sun icon"
+            class="w-6 hidden dark:block"
+          />
         </button>
 
         <a
           href="#contact"
-          class="hidden lg:flex items-center gap-3 px-10 py-2.5 border border-gray-500 rounded-full ml-4 font-Ovo"
-          >Contact
-          <img src="./images/right-arrow-bold.png" alt="arrow" class="w-3"
-        /></a>
+          class="flex hidden lg:flex justify-center gap-2 items-center ml-3 shadow-sm p-2 text-sm backdrop-blur-md lg:font-semibold isolation-auto border-gray-50 before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-left-full before:hover:left-0 before:rounded-full dark:before:bg-[#2a004a] before:bg-amber-200 dark:hover:text-gray-50 hover:text-black before:-z-10 before:aspect-square before:hover:scale-150 before:hover:duration-700 relative z-10 px-4 overflow-hidden border-2 rounded-full group font-Ovo dark:border dark:border-white/50 dark:bg-transparent"
+        >
+          Contact
+          <svg
+            class="w-7 h-7 justify-end group-hover:rotate-90 group-hover:bg-gray-50 text-gray-50 ease-linear duration-300 rounded-full border border-gray-700 group-hover:border-none p-2 rotate-45 dark:border dark:border-white/50 dark:bg-transparent"
+            viewBox="0 0 16 19"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M7 18C7 18.5523 7.44772 19 8 19C8.55228 19 9 18.5523 9 18H7ZM8.70711 0.292893C8.31658 -0.0976311 7.68342 -0.0976311 7.29289 0.292893L0.928932 6.65685C0.538408 7.04738 0.538408 7.68054 0.928932 8.07107C1.31946 8.46159 1.95262 8.46159 2.34315 8.07107L8 2.41421L13.6569 8.07107C14.0474 8.46159 14.6805 8.46159 15.0711 8.07107C15.4616 7.68054 15.4616 7.04738 15.0711 6.65685L8.70711 0.292893ZM9 18L9 1H7L7 18H9Z"
+              class="fill-gray-800 group-hover:fill-gray-800"
+            ></path>
+          </svg>
+        </a>
 
         <!-- menu ham -->
         <button class="block md:hidden ml-3" onclick="openMenu()">
-          <img src="./images/menu-black.png" alt="menu" class="w-6" />
+          <img
+            src="./images/menu-black.png"
+            alt="menu"
+            class="w-6 dark:hidden"
+          />
+          <img
+            src="./images/menu-white.png"
+            alt="menu"
+            class="w-6 hidden text-white dark:block"
+          />
         </button>
       </div>
 
       <!-- mobile menu -->
       <ul
         id="sideMenu"
-        class="flex md:hidden flex-col gap-4 py-20 px-10 fixed -right-64 top-0 bottom-0 w-64 z-50 h-screen bg-amber-100 transition duration-500 font-Ovo"
+        class="flex md:hidden flex-col gap-4 py-20 px-10 fixed -right-64 top-0 bottom-0 w-64 z-50 h-screen bg-amber-100 transition duration-500 font-Ovo dark:bg-[#2a004a] dark:text-white"
       >
         <div class="absolute right-6 top-6" onclick="closeMenu()">
           <img
             src="./images/close-black.png"
-            alt=""
-            class="w-5 cursor-pointer"
+            alt="close"
+            class="w-5 cursor-pointer dark:hidden"
+          />
+          <img
+            src="./images/close-white.png"
+            alt="close"
+            class="w-5 cursor-pointer hidden dark:block"
           />
         </div>
 
@@ -90,33 +127,55 @@
         Hi! I'm Tio Prayudha
         <img src="./images//hand-icon.png" alt="hand icon" class="w-6" />
       </h3>
-      <h1 class="text-3xl sm:text-6xl lg:text-[66px] font-Ovo">
+      <h1 class="text-3xl sm:text-6xl lg:text-[66px] font-Ovo mb-8">
         Fullstack web developer based in Indonesia.
       </h1>
       <p class="max-w-2xl mx-auto font-Ovo">
-        I'm a passionate Full-Stack Developer with a knack for building dynamic
-        and scalable web applications. My tech stack includes React.js, Next.js,
-        and Express for seamless front-end and back-end development, coupled
-        with MySQL and MongoDB for robust database management. I'm always
-        exploring new technologies and love collaborating on innovative
-        projects.
+        Hello there👋, I’m a passionate Informatics Engineering student who
+        loves exploring the world of technology and constantly learning new
+        things. With a strong foundation in full-stack development, I enjoy
+        building robust, scalable applications and working on creative solutions
       </p>
 
-      <div class="flex flex-col sm:flex-row items-center gap-4 mt-4">
-        <a
-          href="#contact"
-          class="px-10 py-3 border rounded-full bg-gradient-to-r from-[#EF9C66] to-[#FFC700] text-white flex items-center gap-2"
-          >contact me
-          <img
-            src="./images/right-arrow-white.png"
-            alt="right arrow"
-            class="w-4"
-        /></a>
+      <div class="flex flex-col sm:flex-row items-center gap-6 mt-4">
+        <div class="relative group">
+          <a
+            href="#contact"
+            class="relative inline-block p-px font-semibold leading-6 text-white bg-gray-800 shadow-2xl cursor-pointer rounded-xl shadow-zinc-400 transition-transform duration-300 ease-in-out hover:scale-105 active:scale-95 dark:bg-white/50"
+          >
+            <span
+              class="absolute inset-0 rounded-xl bg-gradient-to-r from-teal-400 via-blue-500 to-purple-500 p-[2px] opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+            ></span>
+
+            <span class="relative z-10 block px-6 py-3 rounded-xl bg-gray-950">
+              <div class="relative z-10 flex items-center space-x-2">
+                <span
+                  class="transition-all duration-500 group-hover:translate-x-1"
+                  >Contact Me</span
+                >
+                <svg
+                  class="w-6 h-6 transition-transform duration-500 group-hover:translate-x-1"
+                  data-slot="icon"
+                  aria-hidden="true"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    clip-rule="evenodd"
+                    d="M8.22 5.22a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L11.94 10 8.22 6.28a.75.75 0 0 1 0-1.06Z"
+                    fill-rule="evenodd"
+                  ></path>
+                </svg>
+              </div>
+            </span>
+          </a>
+        </div>
 
         <a
           href="./images/profile.jpg"
           download
-          class="px-10 py-3 border rounded-full border-gray-500 flex items-center gap-2 bg-white"
+          class="px-8 py-2 border rounded-xl border-gray-500 flex items-center gap-2 bg-white dark:text-black shadow-zinc-900 transition-transform duration-300 ease-in-out hover:scale-105 active:scale-9"
           >my resume
           <img src="./images/download.png" alt="download" class="w-4" />
         </a>
@@ -124,11 +183,11 @@
     </div>
 
     <!-- about me -->
-    <div id="about" class="w-full px-[12%] py-10 scroll-mt-20">
+    <div id="about" class="w-full px-[12%] py-10 scroll-mt-20 mb-20">
       <h4 class="text-center mb-2 text-lg font-Ovo">Introduction</h4>
       <h2 class="text-center text-5xl font-Ovo">About me</h2>
 
-      <div class="flex w-full flex-col lg:flex-row items-center gap-20 my-20">
+      <div class="flex w-full flex-col lg:flex-row items-center gap-20 my-10">
         <div class="max-w-max mx-auto relative">
           <img
             src="./images/profile.jpg"
@@ -153,50 +212,70 @@
         </div>
         <div class="flex-1">
           <p class="mb-10 max-w-2xl font-Ovo">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
-            harum eos eveniet vitae autem doloribus, labore aliquam deleniti,
-            voluptatum cum hic ducimus quasi nihil perferendis facere vel quod
-            beatae culpa.
+            I am a passionate full-stack engineer with a solid foundation in
+            both frontend and backend development. My expertise lies in building
+            dynamic, scalable, and high-performance web applications using
+            technologies such as JavaScript, TypeScript, React.js, Next.js,
+            Express, and Tailwind CSS for the frontend, and MySQL, Prisma, and
+            MongoDB for the backend.
           </p>
 
           <ul class="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-2xl">
             <li
-              class="border-[0.5px] border-gray-400 rounded-xl p-6 cursor-pointer hover:bg-amber-100 hover:-translate-y-1 duration-500 hover:shadow-[4px_4px_0_#000]"
+              class="border-[0.5px] border-gray-400 rounded-xl p-6 cursor-pointer hover:bg-amber-100 hover:-translate-y-1 duration-500 hover:shadow-[4px_4px_0_#000] dark:border-white dark:hover:shadow-white dark:hover:bg-[#2a004a]"
             >
               <img
                 src="./images/code-icon.png"
                 alt="code icon"
-                class="w-7 mt-3"
+                class="w-7 mt-3 dark:filter dark:invert"
               />
-              <h3 class="my-4 font-semibold text-gray-700">Languages</h3>
-              <p class="text-gray-600 text-sm">
+              <h3 class="my-4 font-semibold text-gray-700 dark:text-white">
+                Languages
+              </h3>
+              <p class="text-gray-600 text-sm dark:text-white/80">
                 Javacript, Typescript, PHP, React JS, Next JS
               </p>
             </li>
             <li
-              class="border-[0.5px] border-gray-400 rounded-xl p-6 cursor-pointer hover:bg-amber-100 hover:-translate-y-1 duration-500 hover:shadow-[4px_4px_0_#000]"
+              class="border-[0.5px] border-gray-400 rounded-xl p-6 cursor-pointer hover:bg-amber-100 hover:-translate-y-1 duration-500 hover:shadow-[4px_4px_0_#000] dark:border-white dark:hover:shadow-white dark:hover:bg-[#2a004a]"
             >
               <img
                 src="./images/edu-icon.png"
-                alt="code icon"
-                class="w-7 mt-3"
+                alt="education icon"
+                class="w-7 mt-3 dark:filter dark:invert"
               />
-              <h3 class="my-4 font-semibold text-gray-700">Education</h3>
-              <p class="text-gray-600 text-sm">Computer Science</p>
+              <h3 class="my-4 font-semibold text-gray-700 dark:text-white">
+                Education
+              </h3>
+              <p class="text-gray-600 text-sm dark:text-white/80">
+                I am currently pursuing a degree in CS with GPA of 3.84 / 4
+              </p>
             </li>
             <li
-              class="border-[0.5px] border-gray-400 rounded-xl p-6 cursor-pointer hover:bg-amber-100 hover:-translate-y-1 duration-500 hover:shadow-[4px_4px_0_#000]"
+              class="border-[0.5px] border-gray-400 rounded-xl p-6 cursor-pointer hover:bg-amber-100 hover:-translate-y-1 duration-500 hover:shadow-[4px_4px_0_#000] dark:border-white dark:hover:shadow-white dark:hover:bg-[#2a004a]"
             >
               <img
                 src="./images/project-icon.png"
-                alt="code icon"
-                class="w-7 mt-3"
+                alt="project icon"
+                class="w-7 mt-3 dark:hidden"
               />
-              <h3 class="my-4 font-semibold text-gray-700">Project</h3>
-              <p class="text-gray-600 text-sm">Built more than 3 projects</p>
+              <img
+                src="./images/project-icon-dark.png"
+                alt="project icon"
+                class="w-7 mt-3 hidden dark:block"
+              />
+
+              <h3 class="my-4 font-semibold text-gray-700 dark:text-white">
+                Project
+              </h3>
+              <p class="text-gray-600 text-sm dark:text-white/80">
+                Built more than 3 projects
+              </p>
             </li>
           </ul>
-          <h4 class="my-6 text-gray-700 font-Ovo">Tools i use</h4>
+          <h4 class="my-6 text-gray-700 font-Ovo dark:text-white/80">
+            Tools i use
+          </h4>
 
           <ul class="flex items-center gap-3 sm:gap-5">
             <li
@@ -216,12 +295,20 @@
             <li
               class="flex items-center justify-center w-12 sm:w-14 aspect-square border border-gray-400 rounded-lg cursor-pointer hover:-translate-y-1 duration-500"
             >
-              <img src="./images/prisma.png" alt="vscode" class="w-5 sm:w-7" />
+              <img
+                src="./images/prisma.png"
+                alt="vscode"
+                class="w-5 sm:w-7 dark:filter dark:invert"
+              />
             </li>
             <li
               class="flex items-center justify-center w-12 sm:w-14 aspect-square border border-gray-400 rounded-lg cursor-pointer hover:-translate-y-1 duration-500"
             >
-              <img src="./images/github.png" alt="vscode" class="w-5 sm:w-7" />
+              <img
+                src="./images/github.png"
+                alt="vscode"
+                class="w-5 sm:w-7 dark:filter dark:invert"
+              />
             </li>
             <li
               class="flex items-center justify-center w-12 sm:w-14 aspect-square border border-gray-400 rounded-lg cursor-pointer hover:-translate-y-1 duration-500"
@@ -233,7 +320,7 @@
       </div>
     </div>
 
-    <!-- services -->
+    <!-- services
     <div id="services" class="w-full px-[12%] py-10 scroll-mt-20">
       <h4 class="text-center mb-2 text-lg font-Ovo">What i offer</h4>
       <h2 class="text-center text-5xl font-Ovo">My services</h2>
@@ -244,11 +331,11 @@
 
       <div class="grid grid-cols-auto gap-6 my-10">
         <div
-          class="border border-gray-400 rounded-lg px-8 py-12 hover:shadow-[4px_4px_0_#000] cursor-pointer hover:bg-amber-100 hover:-translate-y-1 duration-500"
+          class="border border-gray-400 rounded-lg px-8 py-12 hover:shadow-[4px_4px_0_#000] cursor-pointer hover:bg-amber-100 hover:-translate-y-1 duration-500 dark:hover:bg-[#2a004a] dark:hover:shadow-white"
         >
           <img src="./images/web-icon.png" alt="web icon" class="w-10" />
-          <h3 class="text-lg my-4 text-gray-700">Web design</h3>
-          <p class="text-sm text-gray-600 leading-5">
+          <h3 class="text-lg my-4 text-gray-700 dark:text-white">Web design</h3>
+          <p class="text-sm text-gray-600 leading-5 dark:text-white/80">
             Web development is the process of building, programming...
           </p>
           <a href="" class="flex items-center gap-2 text-sm mt-5"
@@ -296,7 +383,7 @@
           /></a>
         </div>
       </div>
-    </div>
+    </div> -->
 
     <!-- my work -->
     <div id="work" class="w-full px-[12%] py-10 scroll-mt-20">
@@ -307,88 +394,356 @@
         ipsam placeat. Consequatur, iure iste.
       </p>
 
-      <div class="grid grid-cols-auto my-10 gap-5">
+      <div class="grid grid-cols-auto my-10 gap-5 dark:text-black">
+        <!-- Card -->
         <div
-          class="aspect-square bg-[url('./images/work-1.png')] bg-no-repeat bg-cover bg-center rounded-lg relative cursor-pointer group"
+          class="max-w-sm bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transform transition-all duration-500 hover:scale-105"
         >
-          <div
-            class="bg-white w-10/12 rounded-md absolute bottom-5 left-1/2 -translate-x-1/2 py-3 px-5 flex items-center justify-between duration-500 group-hover:bottom-7"
-          >
-            <div>
-              <h2 class="font-semibold">lorem</h2>
-              <p class="text-sm text-gray-700">lorem</p>
-            </div>
-            <div
-              class="border rounded-full border-black w-9 aspect-square flex items-center justify-center shadow-[2px_2px_0_#000] group-hover:bg-lime-300 transition"
+          <!-- Gambar Project -->
+          <img
+            class="w-full h-48 object-cover"
+            src="./images/project-1.png"
+            alt="Project Image"
+          />
+
+          <!-- Konten Card -->
+          <div class="p-6">
+            <h5
+              class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
             >
-              <img src="./images/send-icon.png" alt="send icon" class="w-5" />
+              Neflix Clone
+            </h5>
+
+            <p
+              class="mb-4 text-base font-normal text-gray-700 dark:text-gray-300"
+            >
+              This project is a Netflix clone built using React, Firebase for
+              authentication, and vanilla CSS for styling. It leverages the TMDB
+              API to fetch movie and TV show data.
+            </p>
+
+            <!-- Tech Stack Ikon -->
+            <div class="flex space-x-4 mb-4 text-gray-500 dark:text-gray-400">
+              <!-- React Icon -->
+              <img
+                src="./images/react.svg"
+                alt="React icon"
+                class="w-6 h-6 transform transition-transform duration-300 hover:scale-125"
+              />
+
+              <!-- Firebase Icon -->
+              <img
+                src="./images/firebase.svg"
+                alt="React icon"
+                class="w-6 h-6 transform transition-transform duration-300 hover:scale-125"
+              />
+
+              <!-- CSS Icon -->
+              <img
+                src="./images/css.svg"
+                alt="React icon"
+                class="w-6 h-6 transform transition-transform duration-300 hover:scale-125"
+              />
             </div>
+
+            <!-- Button View Project -->
+            <a
+              href="#"
+              class="inline-flex items-center px-5 py-3 text-sm font-medium text-center text-white bg-blue-600 rounded-lg hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 transform transition-all duration-300 hover:scale-110"
+            >
+              View Project
+              <svg
+                class="w-4 h-4 ml-2 -mr-1"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M14 5l7 7m0 0l-7 7m7-7H3"
+                ></path>
+              </svg>
+            </a>
           </div>
         </div>
         <div
-          class="aspect-square bg-[url('./images/work-2.png')] bg-no-repeat bg-cover bg-center rounded-lg relative cursor-pointer group"
+          class="max-w-sm bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transform transition-all duration-500 hover:scale-105"
         >
-          <div
-            class="bg-white w-10/12 rounded-md absolute bottom-5 left-1/2 -translate-x-1/2 py-3 px-5 flex items-center justify-between duration-500 group-hover:bottom-7"
-          >
-            <div>
-              <h2 class="font-semibold">lorem</h2>
-              <p class="text-sm text-gray-700">lorem</p>
-            </div>
-            <div
-              class="border rounded-full border-black w-9 aspect-square flex items-center justify-center shadow-[2px_2px_0_#000] group-hover:bg-lime-300 transition"
+          <!-- Gambar Project -->
+          <img
+            class="w-full h-48 object-cover"
+            src="./images/work-1.png"
+            alt="Project Image"
+          />
+
+          <!-- Konten Card -->
+          <div class="p-6">
+            <h5
+              class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
             >
-              <img src="./images/send-icon.png" alt="send icon" class="w-5" />
+              Project Title
+            </h5>
+
+            <p
+              class="mb-4 text-base font-normal text-gray-700 dark:text-gray-300"
+            >
+              This is a brief description of the project. It highlights the core
+              features and technologies used to develop the project.
+            </p>
+
+            <!-- Tech Stack Ikon -->
+            <div class="flex space-x-4 mb-4 text-gray-500 dark:text-gray-400">
+              <!-- React Icon -->
+              <img
+                src="./images/react.svg"
+                alt="React icon"
+                class="w-6 h-6 transform transition-transform duration-300 hover:scale-125"
+              />
+
+              <!-- Tailwind Icon -->
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-6 w-6 transform transition-transform duration-300 hover:scale-125"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M12.007 5.992c-2.11.006-3.736.836-4.875 2.478 1.106-2.103 2.618-2.879 4.537-2.334 1.116.342 1.642 1.005 1.681 1.99-.018 1.09-.588 1.848-1.72 2.273-1.139.437-2.31.37-3.527-.2.394 2.11 1.788 3.171 4.166 3.171 2.108-.006 3.734-.836 4.875-2.478-1.105 2.103-2.617 2.879-4.537 2.334-1.116-.342-1.642-1.005-1.681-1.99.018-1.09.588-1.848 1.72-2.273 1.139-.437 2.31-.37 3.527.2-.394-2.11-1.788-3.171-4.166-3.171z"
+                />
+              </svg>
+
+              <!-- Next.js Icon -->
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-6 w-6 transform transition-transform duration-300 hover:scale-125"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M12 2C6.477 2 2 6.477 2 12c0 5.523 4.477 10 10 10 5.523 0 10-4.477 10-10 0-5.523-4.477-10-10-10zm0 18c-1.932 0-3.73-.672-5.14-1.788l1.34-1.23c1.128.826 2.518 1.32 3.8 1.32 3.047 0 5.51-2.64 5.51-5.58 0-3.04-2.463-5.48-5.51-5.48-3.063 0-5.48 2.44-5.48 5.48 0 1.017.276 2.013.814 2.856l-1.24 1.18C5.95 13.812 5.5 12.42 5.5 11c0-3.59 2.91-6.5 6.5-6.5 3.58 0 6.5 2.91 6.5 6.5s-2.92 6.5-6.5 6.5z"
+                />
+              </svg>
             </div>
+
+            <!-- Button View Project -->
+            <a
+              href="#"
+              class="inline-flex items-center px-5 py-3 text-sm font-medium text-center text-white bg-blue-600 rounded-lg hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 transform transition-all duration-300 hover:scale-110"
+            >
+              View Project
+              <svg
+                class="w-4 h-4 ml-2 -mr-1"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M14 5l7 7m0 0l-7 7m7-7H3"
+                ></path>
+              </svg>
+            </a>
           </div>
         </div>
         <div
-          class="aspect-square bg-[url('./images/work-3.png')] bg-no-repeat bg-cover bg-center rounded-lg relative cursor-pointer group"
+          class="max-w-sm bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transform transition-all duration-500 hover:scale-105"
         >
-          <div
-            class="bg-white w-10/12 rounded-md absolute bottom-5 left-1/2 -translate-x-1/2 py-3 px-5 flex items-center justify-between duration-500 group-hover:bottom-7"
-          >
-            <div>
-              <h2 class="font-semibold">lorem</h2>
-              <p class="text-sm text-gray-700">lorem</p>
-            </div>
-            <div
-              class="border rounded-full border-black w-9 aspect-square flex items-center justify-center shadow-[2px_2px_0_#000] group-hover:bg-lime-300 transition"
+          <!-- Gambar Project -->
+          <img
+            class="w-full h-48 object-cover"
+            src="./images/work-1.png"
+            alt="Project Image"
+          />
+
+          <!-- Konten Card -->
+          <div class="p-6">
+            <h5
+              class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
             >
-              <img src="./images/send-icon.png" alt="send icon" class="w-5" />
+              Project Title
+            </h5>
+
+            <p
+              class="mb-4 text-base font-normal text-gray-700 dark:text-gray-300"
+            >
+              This is a brief description of the project. It highlights the core
+              features and technologies used to develop the project.
+            </p>
+
+            <!-- Tech Stack Ikon -->
+            <div class="flex space-x-4 mb-4 text-gray-500 dark:text-gray-400">
+              <!-- React Icon -->
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-6 w-6 transform transition-transform duration-300 hover:scale-125"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M12 2c-2.8 0-5.1 1.8-6.6 4.5C4.5 8 4.5 10 5 12c-.5 2 0 4 1.4 5.5 1.5 2.8 3.8 4.5 6.6 4.5s5.1-1.8 6.6-4.5C19.5 16 19.5 14 19 12c.5-2 0-4-1.4-5.5C17.1 3.8 14.8 2 12 2zm0 17c-2.5 0-4.8-1.7-6.2-4.5C5.5 13 5.5 11 6 9c1.4-2.8 3.7-4.5 6.2-4.5S16.8 6.2 18 9c.5 2 0 4-1.4 5.5-1.4 2.8-3.7 4.5-6.2 4.5zm0-9c-1.6 0-3 1.4-3 3s1.4 3 3 3 3-1.4 3-3-1.4-3-3-3zm0-2c3.9 0 7 2.7 7 6s-3.1 6-7 6-7-2.7-7-6 3.1-6 7-6z"
+                />
+              </svg>
+
+              <!-- Tailwind Icon -->
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-6 w-6 transform transition-transform duration-300 hover:scale-125"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M12.007 5.992c-2.11.006-3.736.836-4.875 2.478 1.106-2.103 2.618-2.879 4.537-2.334 1.116.342 1.642 1.005 1.681 1.99-.018 1.09-.588 1.848-1.72 2.273-1.139.437-2.31.37-3.527-.2.394 2.11 1.788 3.171 4.166 3.171 2.108-.006 3.734-.836 4.875-2.478-1.105 2.103-2.617 2.879-4.537 2.334-1.116-.342-1.642-1.005-1.681-1.99.018-1.09.588-1.848 1.72-2.273 1.139-.437 2.31-.37 3.527.2-.394-2.11-1.788-3.171-4.166-3.171z"
+                />
+              </svg>
+
+              <!-- Next.js Icon -->
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-6 w-6 transform transition-transform duration-300 hover:scale-125"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M12 2C6.477 2 2 6.477 2 12c0 5.523 4.477 10 10 10 5.523 0 10-4.477 10-10 0-5.523-4.477-10-10-10zm0 18c-1.932 0-3.73-.672-5.14-1.788l1.34-1.23c1.128.826 2.518 1.32 3.8 1.32 3.047 0 5.51-2.64 5.51-5.58 0-3.04-2.463-5.48-5.51-5.48-3.063 0-5.48 2.44-5.48 5.48 0 1.017.276 2.013.814 2.856l-1.24 1.18C5.95 13.812 5.5 12.42 5.5 11c0-3.59 2.91-6.5 6.5-6.5 3.58 0 6.5 2.91 6.5 6.5s-2.92 6.5-6.5 6.5z"
+                />
+              </svg>
             </div>
+
+            <!-- Button View Project -->
+            <a
+              href="#"
+              class="inline-flex items-center px-5 py-3 text-sm font-medium text-center text-white bg-blue-600 rounded-lg hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 transform transition-all duration-300 hover:scale-110"
+            >
+              View Project
+              <svg
+                class="w-4 h-4 ml-2 -mr-1"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M14 5l7 7m0 0l-7 7m7-7H3"
+                ></path>
+              </svg>
+            </a>
           </div>
         </div>
         <div
-          class="aspect-square bg-[url('./images/work-4.png')] bg-no-repeat bg-cover bg-center rounded-lg relative cursor-pointer group"
+          class="max-w-sm bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transform transition-all duration-500 hover:scale-105"
         >
-          <div
-            class="bg-white w-10/12 rounded-md absolute bottom-5 left-1/2 -translate-x-1/2 py-3 px-5 flex items-center justify-between duration-500 group-hover:bottom-7"
-          >
-            <div>
-              <h2 class="font-semibold">lorem</h2>
-              <p class="text-sm text-gray-700">lorem</p>
-            </div>
-            <div
-              class="border rounded-full border-black w-9 aspect-square flex items-center justify-center shadow-[2px_2px_0_#000] group-hover:bg-lime-300 transition"
+          <!-- Gambar Project -->
+          <img
+            class="w-full h-48 object-cover"
+            src="./images/work-1.png"
+            alt="Project Image"
+          />
+
+          <!-- Konten Card -->
+          <div class="p-6">
+            <h5
+              class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
             >
-              <img src="./images/send-icon.png" alt="send icon" class="w-5" />
+              Project Title
+            </h5>
+
+            <p
+              class="mb-4 text-base font-normal text-gray-700 dark:text-gray-300"
+            >
+              This is a brief description of the project. It highlights the core
+              features and technologies used to develop the project.
+            </p>
+
+            <!-- Tech Stack Ikon -->
+            <div class="flex space-x-4 mb-4 text-gray-500 dark:text-gray-400">
+              <!-- React Icon -->
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-6 w-6 transform transition-transform duration-300 hover:scale-125"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M12 2c-2.8 0-5.1 1.8-6.6 4.5C4.5 8 4.5 10 5 12c-.5 2 0 4 1.4 5.5 1.5 2.8 3.8 4.5 6.6 4.5s5.1-1.8 6.6-4.5C19.5 16 19.5 14 19 12c.5-2 0-4-1.4-5.5C17.1 3.8 14.8 2 12 2zm0 17c-2.5 0-4.8-1.7-6.2-4.5C5.5 13 5.5 11 6 9c1.4-2.8 3.7-4.5 6.2-4.5S16.8 6.2 18 9c.5 2 0 4-1.4 5.5-1.4 2.8-3.7 4.5-6.2 4.5zm0-9c-1.6 0-3 1.4-3 3s1.4 3 3 3 3-1.4 3-3-1.4-3-3-3zm0-2c3.9 0 7 2.7 7 6s-3.1 6-7 6-7-2.7-7-6 3.1-6 7-6z"
+                />
+              </svg>
+
+              <!-- Tailwind Icon -->
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-6 w-6 transform transition-transform duration-300 hover:scale-125"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M12.007 5.992c-2.11.006-3.736.836-4.875 2.478 1.106-2.103 2.618-2.879 4.537-2.334 1.116.342 1.642 1.005 1.681 1.99-.018 1.09-.588 1.848-1.72 2.273-1.139.437-2.31.37-3.527-.2.394 2.11 1.788 3.171 4.166 3.171 2.108-.006 3.734-.836 4.875-2.478-1.105 2.103-2.617 2.879-4.537 2.334-1.116-.342-1.642-1.005-1.681-1.99.018-1.09.588-1.848 1.72-2.273 1.139-.437 2.31-.37 3.527.2-.394-2.11-1.788-3.171-4.166-3.171z"
+                />
+              </svg>
+
+              <!-- Next.js Icon -->
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-6 w-6 transform transition-transform duration-300 hover:scale-125"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M12 2C6.477 2 2 6.477 2 12c0 5.523 4.477 10 10 10 5.523 0 10-4.477 10-10 0-5.523-4.477-10-10-10zm0 18c-1.932 0-3.73-.672-5.14-1.788l1.34-1.23c1.128.826 2.518 1.32 3.8 1.32 3.047 0 5.51-2.64 5.51-5.58 0-3.04-2.463-5.48-5.51-5.48-3.063 0-5.48 2.44-5.48 5.48 0 1.017.276 2.013.814 2.856l-1.24 1.18C5.95 13.812 5.5 12.42 5.5 11c0-3.59 2.91-6.5 6.5-6.5 3.58 0 6.5 2.91 6.5 6.5s-2.92 6.5-6.5 6.5z"
+                />
+              </svg>
             </div>
+
+            <!-- Button View Project -->
+            <a
+              href="#"
+              class="inline-flex items-center px-5 py-3 text-sm font-medium text-center text-white bg-blue-600 rounded-lg hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 transform transition-all duration-300 hover:scale-110"
+            >
+              View Project
+              <svg
+                class="w-4 h-4 ml-2 -mr-1"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M14 5l7 7m0 0l-7 7m7-7H3"
+                ></path>
+              </svg>
+            </a>
           </div>
         </div>
       </div>
       <a
         href="#"
-        class="w-max flex items-center justify-center gap-2 text-gray-700 border-[0.5px] border-gray-700 rounded-full py-3 px-10 mx-auto my-20 hover:bg-amber-100 duration 500"
+        class="w-max flex items-center justify-center gap-2 text-gray-700 border-[0.5px] border-gray-700 rounded-full py-3 px-10 mx-auto my-20 hover:bg-amber-100 duration 500 dark:text-white dark:border-white dark:hover:bg-[#2a004a]"
         >Show More
-        <img src="./images/right-arrow-bold.png" alt="right arrow" class="w-4"
+        <img
+          src="./images/right-arrow-bold.png"
+          alt="right arrow"
+          class="w-4 dark:hidden" /><img
+          src="./images/right-arrow-bold-dark.png"
+          alt="right arrow"
+          class="w-4 hidden dark:block"
       /></a>
     </div>
 
     <!-- contact -->
     <div
       id="contact"
-      class="w-full px-[12%] py-10 scroll-mt-20 bg-[url('./images/footer-bg-color.png')] bg-no-repeat bg-[length:90%_auto] bg-center"
+      class="w-full px-[12%] py-10 scroll-mt-20 bg-[url('./images/footer-bg-color.png')] bg-no-repeat bg-[length:90%_auto] bg-center dark:bg-none"
     >
       <h4 class="text-center mb-2 text-lg font-Ovo">Connect with me</h4>
       <h2 class="text-center text-5xl font-Ovo">Get in touch</h2>
@@ -402,21 +757,21 @@
           <input
             type="text"
             placeholder="Enter your name"
-            class="flex-1 p-3 outline-none border-[0.5px] border-gray-400 rounded-md bg-white"
+            class="flex-1 p-3 outline-none border-[0.5px] border-gray-400 rounded-md bg-white dark:bg-[#2a004a]/30 dark:border-white/90"
           />
           <input
             type="email"
             placeholder="Enter your email"
-            class="flex-1 p-3 outline-none border-[0.5px] border-gray-400 rounded-md bg-white"
+            class="flex-1 p-3 outline-none border-[0.5px] border-gray-400 rounded-md bg-white dark:bg-[#2a004a]/30 dark:border-white/90"
           />
         </div>
         <textarea
           rows="6"
           placeholder="Enter your message"
-          class="w-full p-4 outline-none border-[0.5px] border-gray-400 rounded-md bg-white mb-6"
+          class="w-full p-4 outline-none border-[0.5px] border-gray-400 rounded-md bg-white mb-6 dark:bg-[#2a004a]/30 dark:border-white/90"
         ></textarea>
         <button
-          class="py-3 px-8 w-max flex items-center justify-between gap-2 bg-black/80 text-white rounded-full mx-auto hover:bg-black duration-500"
+          class="py-3 px-8 w-max flex items-center justify-between gap-2 bg-black/80 text-white rounded-full mx-auto hover:bg-black duration-500 dark:bg-transparent dark:border-[0.5px] dark:hover:bg-[#2a004a]"
         >
           Submit Now
           <img
@@ -435,7 +790,16 @@
           Deqii <span class="text-yellow-300">.</span>
         </h1>
         <div class="w-max flex items-center gap-2 mx-auto">
-          <img src="./images/mail_icon.png" alt="mail_icon" class="w-6" />
+          <img
+            src="./images/mail_icon.png"
+            alt="mail_icon"
+            class="w-6 dark:hidden"
+          />
+          <img
+            src="./images/mail_icon_dark.png"
+            alt="mail_icon"
+            class="w-6 hidden dark:block"
+          />
           tioprayudha04@gmail.com
         </div>
       </div>
