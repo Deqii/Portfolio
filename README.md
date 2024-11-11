@@ -10,4 +10,4 @@ As a **lifelong learner** in the tech industry, I’m always eager to explore ne
 
 ---
 
-Feel free to reach out for collaboration or to discuss any project ideas!
+Feel free to reach out for collaboration or to discuss any project ideas
