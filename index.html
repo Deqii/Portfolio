@@ -118,14 +118,18 @@
     <div
       class="w-11/12 max-w-3xl text-center mx-auto h-screen flex flex-col items-center justify-center gap-4"
     >
-      <img
-        src="./images/profile.jpg"
-        alt="profile"
-        class="rounded-full w-32 h-32"
-      />
-      <h3 class="flex items-end gap-2 text-xl md:text-2xl mb-3 font-Ovo">
+      <div class="relative">
+        <img
+          src="./images/profile.jpg"
+          alt="profile"
+          class="rounded-full w-32 h-32 object-cover border-4 border-gray-700 dark:border-white shadow-lg dark:shadow-white/500 transform hover:scale-110 transition-all duration-300"
+        />
+      </div>
+      <h3
+        class="flex items-end gap-2 text-xl md:text-2xl mb-3 font-Ovo text-gray-900 dark:text-white"
+      >
         Hi! I'm Tio Prayudha
-        <img src="./images//hand-icon.png" alt="hand icon" class="w-6" />
+        <img src="./images/hand-icon.png" alt="hand icon" class="w-6" />
       </h3>
       <h1 class="text-3xl sm:text-6xl lg:text-[66px] font-Ovo mb-8">
         Fullstack web developer based in Indonesia.
@@ -233,7 +237,7 @@
                 Languages
               </h3>
               <p class="text-gray-600 text-sm dark:text-white/80">
-                Javacript, Typescript, PHP, React JS, Next JS
+                Javacript, Typescript, Phyton
               </p>
             </li>
             <li
@@ -269,7 +273,7 @@
                 Project
               </h3>
               <p class="text-gray-600 text-sm dark:text-white/80">
-                Built more than 3 projects
+                Built more than 6 projects
               </p>
             </li>
           </ul>
@@ -316,6 +320,96 @@
               <img src="./images/git.png" alt="vscode" class="w-5 sm:w-7" />
             </li>
           </ul>
+        </div>
+      </div>
+    </div>
+
+    <div id="certificates" class="container mx-auto p-6 scroll-mt-20">
+      <h1 class="text-3xl font-bold text-center mb-8">Sertifikat Saya</h1>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Card 1 -->
+        <div
+          class="relative group bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
+        >
+          <img
+            src="path-to-certificate-image.jpg"
+            alt="Certificate Image"
+            class="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-300"
+          />
+          <div class="p-4">
+            <h3 class="text-lg font-semibold">Sertifikat Web Development</h3>
+            <p class="text-gray-600">Diterbitkan oleh: Udemy</p>
+            <p class="text-sm text-gray-500">Tanggal: 12 September 2023</p>
+          </div>
+          <button
+            class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+          >
+            Lihat Detail
+          </button>
+        </div>
+
+        <!-- Card 2 -->
+        <div
+          class="relative group bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
+        >
+          <img
+            src="path-to-certificate-image.jpg"
+            alt="Certificate Image"
+            class="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-300"
+          />
+          <div class="p-4">
+            <h3 class="text-lg font-semibold">Sertifikat JavaScript</h3>
+            <p class="text-gray-600">Diterbitkan oleh: FreeCodeCamp</p>
+            <p class="text-sm text-gray-500">Tanggal: 25 Agustus 2023</p>
+          </div>
+          <button
+            class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+          >
+            Lihat Detail
+          </button>
+        </div>
+
+        <!-- Card 3 -->
+        <div
+          class="relative group bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
+        >
+          <img
+            src="path-to-certificate-image.jpg"
+            alt="Certificate Image"
+            class="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-300"
+          />
+          <div class="p-4">
+            <h3 class="text-lg font-semibold">Sertifikat React.js</h3>
+            <p class="text-gray-600">Diterbitkan oleh: Coursera</p>
+            <p class="text-sm text-gray-500">Tanggal: 3 Juli 2023</p>
+          </div>
+          <button
+            class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+          >
+            Lihat Detail
+          </button>
+        </div>
+
+        <!-- Tambahkan lebih banyak card sesuai kebutuhan -->
+        <!-- Modal -->
+        <div
+          id="modal"
+          class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden"
+        >
+          <div class="bg-white p-6 rounded-lg w-96">
+            <h2 class="text-xl font-bold mb-4">Detail Sertifikat</h2>
+            <p class="text-gray-600">
+              Sertifikat ini diberikan oleh Udemy setelah menyelesaikan kursus
+              Web Development pada tanggal 12 September 2023.
+            </p>
+            <button
+              id="closeModal"
+              class="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+            >
+              Tutup
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -417,9 +511,8 @@
             <p
               class="mb-4 text-base font-normal text-gray-700 dark:text-gray-300"
             >
-              This project is a Netflix clone built using React, Firebase for
-              authentication, and vanilla CSS for styling. It leverages the TMDB
-              API to fetch movie and TV show data.
+              This project is a Netflix clone built using React, Firebase and
+              CSS. Also TMDB API to fetch movie and TV show data.
             </p>
 
             <!-- Tech Stack Ikon -->
@@ -475,7 +568,7 @@
           <!-- Gambar Project -->
           <img
             class="w-full h-48 object-cover"
-            src="./images/work-1.png"
+            src="./images/project-2.png"
             alt="Project Image"
           />
 
@@ -484,53 +577,41 @@
             <h5
               class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
             >
-              Project Title
+              HIMATIF
             </h5>
 
             <p
               class="mb-4 text-base font-normal text-gray-700 dark:text-gray-300"
             >
-              This is a brief description of the project. It highlights the core
-              features and technologies used to develop the project.
+              This project is a Student Association Website using next js and
+              prisma for the database
             </p>
 
             <!-- Tech Stack Ikon -->
             <div class="flex space-x-4 mb-4 text-gray-500 dark:text-gray-400">
               <!-- React Icon -->
               <img
-                src="./images/react.svg"
+                src="./images/next-js.svg"
                 alt="React icon"
                 class="w-6 h-6 transform transition-transform duration-300 hover:scale-125"
               />
 
-              <!-- Tailwind Icon -->
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-6 w-6 transform transition-transform duration-300 hover:scale-125"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-              >
-                <path
-                  d="M12.007 5.992c-2.11.006-3.736.836-4.875 2.478 1.106-2.103 2.618-2.879 4.537-2.334 1.116.342 1.642 1.005 1.681 1.99-.018 1.09-.588 1.848-1.72 2.273-1.139.437-2.31.37-3.527-.2.394 2.11 1.788 3.171 4.166 3.171 2.108-.006 3.734-.836 4.875-2.478-1.105 2.103-2.617 2.879-4.537 2.334-1.116-.342-1.642-1.005-1.681-1.99.018-1.09.588-1.848 1.72-2.273 1.139-.437 2.31-.37 3.527.2-.394-2.11-1.788-3.171-4.166-3.171z"
-                />
-              </svg>
+              <img
+                src="./images/prisma.svg"
+                alt="React icon"
+                class="w-6 h-6 transform transition-transform duration-300 hover:scale-125"
+              />
 
-              <!-- Next.js Icon -->
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-6 w-6 transform transition-transform duration-300 hover:scale-125"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-              >
-                <path
-                  d="M12 2C6.477 2 2 6.477 2 12c0 5.523 4.477 10 10 10 5.523 0 10-4.477 10-10 0-5.523-4.477-10-10-10zm0 18c-1.932 0-3.73-.672-5.14-1.788l1.34-1.23c1.128.826 2.518 1.32 3.8 1.32 3.047 0 5.51-2.64 5.51-5.58 0-3.04-2.463-5.48-5.51-5.48-3.063 0-5.48 2.44-5.48 5.48 0 1.017.276 2.013.814 2.856l-1.24 1.18C5.95 13.812 5.5 12.42 5.5 11c0-3.59 2.91-6.5 6.5-6.5 3.58 0 6.5 2.91 6.5 6.5s-2.92 6.5-6.5 6.5z"
-                />
-              </svg>
+              <img
+                src="./images/css.svg"
+                alt="React icon"
+                class="w-6 h-6 transform transition-transform duration-300 hover:scale-125"
+              />
             </div>
 
             <!-- Button View Project -->
             <a
-              href="#"
+              href="https://himatif-ypkp.vercel.app/"
               class="inline-flex items-center px-5 py-3 text-sm font-medium text-center text-white bg-blue-600 rounded-lg hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 transform transition-all duration-300 hover:scale-110"
             >
               View Project

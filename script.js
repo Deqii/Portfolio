@@ -68,3 +68,16 @@ function toggleTheme() {
     localStorage.theme = "light";
   }
 }
+
+const modal = document.getElementById("modal");
+const closeModal = document.getElementById("closeModal");
+
+document.querySelectorAll('button[data-target="modal"]').forEach((btn) => {
+  btn.addEventListener("click", () => {
+    modal.classList.remove("hidden");
+  });
+});
+
+closeModal.addEventListener("click", () => {
+  modal.classList.add("hidden");
+});

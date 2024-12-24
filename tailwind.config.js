@@ -1,6 +1,12 @@
 tailwind.config = {
   theme: {
     extend: {
+      keyframes: {
+        typingEffect: {
+          "0%": { width: 0 },
+          "100%": { width: "100%" },
+        },
+      },
       gridTemplateColumns: {
         auto: "repeat(auto-fit, minmax(200px, 1fr))",
       },
@@ -10,6 +16,7 @@ tailwind.config = {
       },
       animation: {
         spin_slow: "spin 6s linear infinite",
+        typingEffect: "typingEffect 2s forwards",
       },
     },
   },
